@@ -78,7 +78,7 @@ export const Terminal = () => {
   }, [isProcessing]);
   const handleCommand = async (command: string) => {
     if (!command.trim()) return;
-    addLine(`shadowfall> ${command}`, 'user');
+    addLine(`himanshu> ${command}`, 'user');
     setCurrentInput('');
     setIsProcessing(true);
     try {
@@ -119,13 +119,20 @@ export const Terminal = () => {
     ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   
     ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
     ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   
-                                                              
-    ███████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ██╗    ██╗███████╗ █████╗ ██╗     ██╗     
-    ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗██║     ██║     
-    ███████╗███████║███████║██║  ██║██║   ██║██║ █╗ ██║█████╗  ███████║██║     ██║     
-    ╚════██║██╔══██║██╔══██║██║  ██║██║   ██║██║███╗██║██╔══╝  ██╔══██║██║     ██║     
-    ███████║██║  ██║██║  ██║██████╔╝╚██████╔╝╚███╔███╔╝██║     ██║  ██║███████╗███████╗
-    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝
+                                                               
+    ██╗  ██╗██╗███╗   ███╗ █████╗ ███╗   ██╗███████╗██╗  ██╗██╗   ██╗
+    ██║  ██║██║████╗ ████║██╔══██╗████╗  ██║██╔════╝██║  ██║██║   ██║
+    ███████║██║██╔████╔██║███████║██╔██╗ ██║███████╗███████║██║   ██║
+    ██╔══██║██║██║╚██╔╝██║██╔══██║██║╚██╗██║╚════██║██╔══██║██║   ██║
+    ██║  ██║██║██║ ╚═╝ ██║██║  ██║██║ ╚████║███████║██║  ██║╚██████╔╝
+    ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ 
+                                                                       
+    ██████╗ ███████╗███╗   ██╗███████╗████████╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+    ██╔══██╗██╔════╝████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+    ██████╔╝█████╗  ██╔██╗ ██║█████╗     ██║   ██████╔╝███████║   ██║   ██║██║   ██║██╔██╗ ██║
+    ██╔═══╝ ██╔══╝  ██║╚██╗██║██╔══╝     ██║   ██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+    ██║     ███████╗██║ ╚████║███████╗   ██║   ██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+    ╚═╝     ╚══════╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
   `;
   return <div className="min-h-screen bg-terminal font-mono">
       <div className="container mx-auto p-4 h-screen flex flex-col">
@@ -143,7 +150,7 @@ export const Terminal = () => {
             </div>)}
           
           {!isProcessing && !showBanner && <div className="flex items-center mt-2">
-              <span className="text-terminal-glow mr-2">shadowfall&gt;</span>
+              <span className="text-terminal-glow mr-2">himanshu&gt;</span>
               <input ref={inputRef} type="text" value={currentInput} onChange={e => setCurrentInput(e.target.value)} onKeyPress={handleKeyPress} className="flex-1 bg-transparent border-none outline-none text-terminal-text font-mono text-sm caret-terminal-glow" disabled={isProcessing} placeholder="Enter command..." />
               <span className="animate-blink-caret border-r-2 border-terminal-glow h-4 ml-1"></span>
             </div>}
