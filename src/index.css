@@ -8,35 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
+    --foreground: 120 100% 50%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 5%;
+    --card-foreground: 120 100% 50%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 120 100% 50%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 120 100% 50%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 120 60% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 100% 25%;
+    --input: 0 0% 5%;
+    --ring: 120 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
+
+    /* Terminal specific tokens */
+    --terminal-bg: 0 0% 0%;
+    --terminal-text: 120 100% 50%;
+    --terminal-glow: 120 100% 50%;
+    --terminal-accent: 180 100% 50%;
+    --terminal-warning: 45 100% 50%;
+    --terminal-error: 0 100% 50%;
+    --terminal-success: 120 100% 50%;
+
+    /* Gradients */
+    --gradient-terminal: linear-gradient(135deg, hsl(120 100% 25% / 0.1), hsl(120 100% 50% / 0.05));
+    --gradient-glow: radial-gradient(circle, hsl(120 100% 50% / 0.3), transparent);
+
+    /* Shadows */
+    --shadow-terminal: 0 0 20px hsl(120 100% 50% / 0.5);
+    --shadow-glow: 0 0 40px hsl(120 100% 50% / 0.3);
+
+    /* Animations */
+    --transition-terminal: all 0.2s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
