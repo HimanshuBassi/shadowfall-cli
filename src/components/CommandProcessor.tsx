@@ -216,15 +216,27 @@ export class CommandProcessor {
     addLines: (lines: TerminalLine[]) => void
   ): Promise<void> {
     if (args.length < 2) {
-      addLine('[ERROR] Usage: exploit <CVE-ID> [-p <port>]', 'error');
+      addLine('[ERROR] Usage: exploit CVE-ID [-p port]', 'error');
+      addLine('[INFO] Example: exploit CVE-2021-44228 -p 8080', 'output');
       return;
     }
 
-    const cveId = args[1];
+    // Clean up CVE ID - remove angle brackets and extra spaces
+    const rawCveId = args[1];
+    const cveId = rawCveId.replace(/[<>]/g, '').trim();
+    
     const vulnerability = this.sessionData.vulnerabilities.find(v => v.cve === cveId);
 
     if (!vulnerability) {
-      addLine(`[ERROR] CVE ${cveId} not found in current assessment. Run vuln scan first.`, 'error');
+      addLine(`[ERROR] CVE ${cveId} not found in current assessment.`, 'error');
+      if (this.sessionData.vulnerabilities.length > 0) {
+        addLine('[INFO] Available CVEs from last scan:', 'output');
+        this.sessionData.vulnerabilities.forEach(v => {
+          addLine(`       ${v.cve} - ${v.title}`, 'output');
+        });
+      } else {
+        addLine('[INFO] Run "vuln <target>" command first to identify vulnerabilities.', 'output');
+      }
       return;
     }
 
